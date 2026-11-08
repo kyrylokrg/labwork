@@ -1,7 +1,7 @@
 const int PIN_AND_OUT = 5;
 const int LED_PINS[3] = {4, 3, 2};
 
-int activeLed = 0;
+int onLed = 0;
 
 void setup() {
   pinMode(PIN_AND_OUT, INPUT);
@@ -14,9 +14,9 @@ void setup() {
 
 void loop() {
   if (digitalRead(PIN_AND_OUT) == HIGH) {
-    digitalWrite(LED_PINS[activeLed], LOW);
-    activeLed = (activeLed + 1) % 3;
-    digitalWrite(LED_PINS[activeLed], HIGH);
+    digitalWrite(LED_PINS[onLed], LOW);
+    onLed = (on + 1) % 3;
+    digitalWrite(LED_PINS[onLed], HIGH);
     delay(200);
   } else {
     for (int i = 0; i < 3; i++) {
